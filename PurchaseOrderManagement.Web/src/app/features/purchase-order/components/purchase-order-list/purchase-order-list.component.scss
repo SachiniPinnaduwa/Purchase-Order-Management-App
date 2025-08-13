@@ -1,0 +1,258 @@
+.container {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin: 0;
+  }
+
+  button[mat-raised-button] {
+    background-color: var(--light-green-500) !important; /* dark green */
+    color: white !important;
+    font-weight: 500;
+
+    &:hover {
+      background-color: #256628 !important; /* slightly darker green */
+    }
+  }
+}
+
+// .filter-container {
+//   background: var(--light-green-300);
+//   padding: 16px;
+//   border-radius: 12px 12px 0 0;
+//   margin-bottom: 0;
+//   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+//   border: 1px solid var(--light-green-200);
+
+//   mat-form-field {
+//     width: 100%;
+//   }
+// }
+
+.filter-container {
+  background: var(--light-green-200); /* Softer green to match palette */
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  //padding: 16px;
+  //border-radius: 12px 12px 0 0;
+  //margin-bottom: 0;
+  //box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  //border: 1px solid var(--light-green-300);
+
+  mat-form-field {
+    width: 100%;
+
+    input.mat-input-element {
+      padding-top: 12px; // Ensures label has room to move up
+    }
+
+    /* Force background for the input area */
+    ::ng-deep .mat-mdc-form-field-infix {
+      background-color: var(--light-green-bg) !important;
+      //border-radius: 8px !important;
+      //padding: 0.4em 0.8em !important;
+      //border: 1px solid var(--light-green-300) !important;
+      transition: all 0.2s ease-in-out;
+    }
+
+    /* Hover effect */
+    ::ng-deep .mat-mdc-form-field-infix:hover {
+      background-color: var(--light-green-100) !important;
+    }
+
+    /* Change placeholder & text color */
+    ::ng-deep .mat-mdc-input-element {
+      color: #2e7d32 !important;
+    }
+    ::ng-deep .mat-mdc-input-element::placeholder {
+      color: #4caf50 !important;
+      opacity: 1 !important;
+    }
+
+    /* Change outline color */
+    ::ng-deep .mdc-notched-outline__leading,
+    ::ng-deep .mdc-notched-outline__notch,
+    ::ng-deep .mdc-notched-outline__trailing {
+      border-color: var(--light-green-300) !important;
+    }
+  }
+}
+
+.table-container {
+  border-radius: 0 0 12px 12px;
+  border-top: none;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+
+  table {
+    width: 100%;
+    min-width: 800px;
+
+    th {
+      background: var(--light-green-100);
+      color: #2e7d32;
+      font-weight: 500;
+      font-size: 0.875rem;
+    }
+
+    td {
+      background: var(--light-green-bg);
+      border-bottom: 1px solid var(--light-green-100);
+      color: #2c3e50;
+    }
+
+    tr:hover td {
+      background: var(--light-green-100) !important;
+    }
+  }
+
+  // .mat-paginator {
+  //   background: var(--light-green-300) !important;
+  //   color: #2c3e50;
+
+  //   .mat-select-value {
+  //     color: #2c3e50;
+  //   }
+  //   .mat-icon-button {
+  //     color: #2c3e50;
+  //   }
+  // }
+
+  mat-table {
+    th.mat-header-cell {
+      &.mat-sort-header {
+        color: #3f51b5; // Purple color to match theme
+        font-weight: 500;
+
+        &:hover {
+          color: #5c6bc0; // Lighter purple on hover
+        }
+      }
+    }
+
+    .mat-sort-header-arrow {
+      color: #3f51b5; // Sort arrow color
+    }
+  }
+}
+
+// .mat-mdc-paginator {
+//   background: var(--light-green-200) !important;
+//   color: #2c3e50 !important;
+//   border-top: 1px solid var(--light-green-300);
+
+//   .mat-mdc-select-value {
+//     color: #2c3e50 !important;
+//   }
+
+//   .mat-mdc-icon-button {
+//     color: #2c3e50 !important;
+//     transition: background-color 0.2s ease;
+
+//     .mat-mdc-paginator-icon {
+//       fill: #1a252f !important; // ensure SVG icon is visible
+//     }
+//   }
+
+//   .mat-mdc-icon-button:hover {
+//     background-color: var(--light-green-100) !important;
+//     border-radius: 50%;
+//   }
+// }
+
+/* ======= Full Paginator Theme Override ======= */
+.mat-mdc-paginator {
+  background: var(--light-green-200) !important;
+  color: #2c3e50 !important;
+  border-top: 1px solid var(--light-green-300);
+  font-size: 0.875rem;
+
+  /* Dropdown page size selector */
+  .mat-mdc-select-value {
+    color: #2c3e50 !important;
+    font-weight: 500;
+  }
+
+  /* The dropdown arrow icon */
+  .mat-mdc-select-arrow svg {
+    fill: #2c3e50 !important;
+  }
+
+  /* Icon buttons for first/prev/next/last */
+  .mat-mdc-icon-button {
+    color: transparent !important; /* Hide font icon */
+    width: 36px;
+    height: 36px;
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+  }
+
+  /* Hover state for icon buttons */
+  .mat-mdc-icon-button:hover {
+    background-color: var(--light-green-100) !important;
+    border-radius: 50%;
+  }
+
+  /* Page number input field */
+  .mat-mdc-text-field-wrapper {
+    background-color: var(--light-green-bg) !important;
+    border-radius: 6px;
+    border: 1px solid var(--light-green-300);
+  }
+
+  /* Page number text inside input */
+  .mat-mdc-input-element {
+    color: #2c3e50 !important;
+    text-align: center;
+  }
+
+  /* Disabled icons */
+  // .mat-mdc-icon-button.mat-mdc-button-disabled {
+  //   opacity: 0.4;
+  //   pointer-events: none;
+  // }
+
+  /* Accessibility focus outline */
+  .mat-mdc-icon-button:focus-visible {
+    outline: 2px solid var(--light-green-500);
+    outline-offset: 2px;
+  }
+}
+
+/* Action icons color */
+button[color="primary"] mat-icon {
+  color: var(--primary-blue) !important; /* blue for view */
+}
+button[color="accent"] mat-icon {
+  color: var(--accent-orange) !important; /* orange for edit */
+}
+button[color="warn"] mat-icon {
+  color: var(--warn-red) !important; /* red for delete */
+}
+
+// Responsive table
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+}

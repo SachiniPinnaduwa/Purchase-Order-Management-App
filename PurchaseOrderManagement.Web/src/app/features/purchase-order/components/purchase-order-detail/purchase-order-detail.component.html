@@ -1,0 +1,64 @@
+<mat-card *ngIf="purchaseOrder">
+  <mat-card-header>
+    <mat-card-title>Purchase Order Details</mat-card-title>
+    <mat-card-subtitle>PO #{{ purchaseOrder.poNumber }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>
+        <mat-icon matListItemIcon>description</mat-icon>
+        <span matListItemTitle>Description</span>
+        <span matListItemLine>{{ purchaseOrder.poDescription }}</span>
+      </mat-list-item>
+
+      <mat-list-item>
+        <mat-icon matListItemIcon>local_shipping</mat-icon>
+        <span matListItemTitle>Supplier</span>
+        <span matListItemLine>{{ purchaseOrder.supplierName }}</span>
+      </mat-list-item>
+
+      <mat-list-item>
+        <mat-icon matListItemIcon>event</mat-icon>
+        <span matListItemTitle>Order Date</span>
+        <span matListItemLine>{{ purchaseOrder.orderDate | date }}</span>
+      </mat-list-item>
+
+      <mat-list-item>
+        <mat-icon matListItemIcon>attach_money</mat-icon>
+        <span matListItemTitle>Total Amount</span>
+        <span matListItemLine>{{ purchaseOrder.totalAmount | currency }}</span>
+      </mat-list-item>
+
+      <mat-list-item>
+        <mat-icon matListItemIcon>info</mat-icon>
+        <span matListItemTitle>Status</span>
+        <span matListItemLine>
+          <span
+            class="status-badge"
+            [class]="purchaseOrder.status.toLowerCase()"
+          >
+            {{ purchaseOrder.status }}
+          </span>
+        </span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      color="primary"
+      [routerLink]="['/purchase-orders/edit', purchaseOrder.id]"
+    >
+      <mat-icon>edit</mat-icon> Edit
+    </button>
+    <button mat-button [routerLink]="['/purchase-orders']">
+      <mat-icon>arrow_back</mat-icon> Back to List
+    </button>
+  </mat-card-actions>
+</mat-card>

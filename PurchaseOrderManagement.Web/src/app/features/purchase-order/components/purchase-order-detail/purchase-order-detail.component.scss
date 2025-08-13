@@ -1,0 +1,115 @@
+mat-card {
+  max-width: 800px;
+  margin: 32px auto;
+  overflow: hidden;
+  background: linear-gradient(
+    145deg,
+    var(--light-green-bg) 0%,
+    var(--light-green-100) 100%
+  );
+  border: 1px solid var(--light-green-200);
+
+  mat-card-header {
+    background: linear-gradient(
+      90deg,
+      var(--light-green-300) 0%,
+      var(--light-green-400) 100%
+    );
+    color: var(--primary-dark-green);
+    padding: 24px;
+
+    mat-card-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    mat-card-subtitle {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  mat-list {
+    padding: 0;
+
+    mat-list-item {
+      &:nth-child(even) {
+        background: rgba(221, 242, 209, 0.5);
+      }
+
+      [matListItemTitle] {
+        color: var(--primary-green);
+      }
+
+      [matListItemLine] {
+        color: var(--primary-dark-green);
+      }
+    }
+  }
+
+  mat-card-actions {
+    padding: 16px 24px;
+    background: rgba(190, 227, 186, 0.3);
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      &:first-child {
+        background: linear-gradient(
+          90deg,
+          var(--light-green-100) 0%,
+          var(--light-green-200) 100%
+        );
+        color: var(--primary-dark-green);
+      }
+    }
+
+    button[mat-button] {
+      color: var(--primary-dark-green);
+      border: 1px solid var(--light-green-200);
+
+      &:hover {
+        background: rgba(190, 227, 186, 0.2);
+      }
+
+      .mat-icon {
+        color: inherit; // Ensures icon matches text color
+      }
+    }
+  }
+}
+
+.mat-list-item {
+  .mat-icon {
+    color: var(--primary-dark-green);
+    margin-right: 16px;
+  }
+
+  &:nth-child(odd) {
+    background-color: rgba(
+      221,
+      242,
+      209,
+      0.3
+    ); // Light green background for odd items
+  }
+}
+
+// Responsive detail view
+@media (max-width: 600px) {
+  mat-card {
+    margin: 16px;
+
+    mat-card-header {
+      padding: 16px;
+    }
+
+    mat-card-actions {
+      flex-direction: column;
+      gap: 12px;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

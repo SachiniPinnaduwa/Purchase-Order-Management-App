@@ -1,0 +1,124 @@
+mat-card {
+  max-width: 800px;
+  margin: 32px auto;
+  padding: 24px;
+  background: linear-gradient(145deg, #f6fff0 0%, #e9f7e0 50%, #dff0d5 100%);
+  border: 1px solid #c8e6c9;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  }
+}
+mat-card-header {
+  background: linear-gradient(90deg, #bee3ba 0%, #aedcae 50%, #9fd4a3 100%);
+  margin: -24px -24px 24px -24px;
+  padding: 20px;
+  border-radius: 16px 16px 0 0;
+  box-shadow: inset 0 -2px rgba(255, 255, 255, 0.4);
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #1b5e20;
+}
+
+mat-form-header {
+  .mat-form-field-outline {
+    color: #bee3ba;
+  }
+
+  .mat-form-field-label {
+    color: #689f38;
+  }
+
+  &.mat-focused {
+    .mat-form-field-outline-thick {
+      color: #689f38;
+    }
+
+    .mat-form-field-label {
+      color: #689f38;
+    }
+  }
+}
+
+.mat-input-element {
+  color: #2e7d32;
+}
+
+.form-row {
+  margin-bottom: 20px;
+
+  mat-form-field {
+    width: 100%;
+
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.button-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 32px;
+
+  button[type="submit"] {
+    background: linear-gradient(135deg, #9fd4a3 0%, #8dcc96 50%, #7cbc89 100%);
+    color: #1b5e20;
+    border: 1px solid #bee3ba;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(
+        135deg,
+        #8dcc96 0%,
+        #7cbc89 50%,
+        #6bae7c 100%
+      );
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+    }
+  }
+
+  button[type="button"] {
+    color: #2e7d32;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+
+    &:hover {
+      border-color: #a5d6a7;
+      background-color: rgba(165, 214, 167, 0.1);
+    }
+  }
+}
+
+.button-row button {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+// Responsive form
+@media (max-width: 600px) {
+  mat-card {
+    margin: 16px;
+    padding: 16px;
+  }
+
+  .button-row {
+    flex-direction: column-reverse;
+
+    button {
+      width: 100%;
+    }
+  }
+}

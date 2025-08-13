@@ -1,0 +1,44 @@
+# General
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.vs/
+.vs/
+*.swp
+*.sln.iml
+
+# Angular specific
+/node_modules
+/dist
+/.angular/cache
+
+# .NET specific
+/.vs
+/packages/
+*.nupkg
+*.njsproj
+*.msbuild
+*.msb
+*.sln
+*.sw?
+
+# Environment files
+.env
+*.env
+appsettings.Development.json
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+x64/
+build/
+[Bb]in/
+[Oo]bj/
+out/
+
+# IDE folders
+.idea/
+.vscode/

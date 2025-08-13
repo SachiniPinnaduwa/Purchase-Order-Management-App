@@ -1,0 +1,263 @@
+/* styles.scss */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+// 1. Import the prebuilt theme
+//@import "@angular/material/prebuilt-themes/purple-green.css";
+
+// 2. Custom global styles with your light green palette
+:root {
+  --light-green-100: #f0f7e6; /* Very pale green */
+  --light-green-200: #d8edc8; /* Soft mint */
+  --light-green-300: #b5d8a7; /* Light sage */
+  --light-green-400: #92c389; /* Muted green */
+  --light-green-500: #6fac6e; /* Medium soft green */
+  --light-green-bg: #f5fbee; /* Off-white with green tint */
+  --primary-dark-green: #1b5e20;
+  --primary-green: #689f38;
+  --text-dark: #2c3e50;
+  --primary-blue: #1976d2;
+  --accent-orange: #ff9800;
+  --warn-red: #e53935;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    var(--light-green-100) 0%,
+    var(--light-green-200) 50%,
+    var(--light-green-300) 100%
+  );
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Custom card styles */
+.mat-card {
+  background-color: var(--light-green-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--light-green-200);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* Custom table styles */
+.mat-table {
+  background-color: var(--light-green-bg);
+
+  .mat-header-cell {
+    background-color: var(--light-green-100);
+    color: #2e7d32;
+    font-weight: 500;
+  }
+
+  .mat-row:hover {
+    background-color: var(--light-green-100) !important;
+  }
+}
+
+/* Status badges */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  display: inline-block;
+
+  &.draft {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+  }
+  &.approved {
+    background-color: #f1f8e9;
+    color: #33691e;
+    border: 1px solid #dcedc8;
+  }
+  &.shipped {
+    background-color: #f9fbe7;
+    color: #827717;
+    border: 1px solid #f0f4c3;
+  }
+  &.completed {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+    border: 1px solid #c8e6c9;
+  }
+  &.cancelled {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+  }
+}
+
+/* Field background */
+.mat-mdc-form-field .mat-mdc-form-field-infix {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  padding: 0.25em 0.5em;
+}
+
+.mat-mdc-form-field .mdc-notched-outline__leading,
+.mat-mdc-form-field .mdc-notched-outline__notch,
+.mat-mdc-form-field .mdc-notched-outline__trailing {
+  border-color: var(--light-green-200) !important;
+}
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__notch,
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing {
+  border-color: #689f38 !important;
+}
+/* Label (normal + floating) */
+.mat-mdc-form-field .mdc-floating-label,
+.mat-mdc-form-field.mat-focused .mdc-floating-label {
+  color: #2e7d32 !important;
+}
+
+/* User-typed text */
+.mat-mdc-input-element {
+  color: #2e7d32 !important;
+  caret-color: #2e7d32 !important;
+}
+
+/* Placeholder */
+.mat-mdc-input-element::placeholder {
+  color: #4caf50 !important;
+  opacity: 1 !important;
+}
+
+/* Hint / helper text */
+.mat-mdc-form-field-hint {
+  color: #4caf50 !important;
+}
+
+/* mat-select value + arrow */
+.mat-mdc-select-value {
+  color: #2e7d32 !important;
+}
+.mat-mdc-select-arrow,
+.mat-mdc-select-arrow svg {
+  color: #2e7d32 !important;
+  fill: #2e7d32 !important;
+}
+
+/* Datepicker toggle icon */
+.mat-mdc-form-field .mat-mdc-form-field-icon-suffix,
+.mat-datepicker-toggle .mat-mdc-icon-button {
+  color: #2e7d32 !important;
+}
+
+/* Buttons */
+.mat-raised-button {
+  &:not([disabled]) {
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.mat-raised-button.primary-button {
+  background-color: var(--light-green-500) !important;
+  color: white !important;
+  font-weight: 500;
+
+  &:hover {
+    background-color: #256628 !important;
+  }
+}
+
+/* Sort header arrows */
+.mat-sort-header-container {
+  &.mat-sort-header-sorted {
+    .mat-sort-header-arrow {
+      color: var(--primary-green) !important; /* Green arrows to match theme */
+      opacity: 1 !important;
+
+      .mat-sort-header-indicator {
+        &:after {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  /* Hide arrow for non-sortable columns */
+  &:not(.mat-sort-header-sorted) {
+    cursor: default;
+
+    .mat-sort-header-arrow {
+      opacity: 0 !important;
+    }
+
+    &:hover {
+      .mat-sort-header-arrow {
+        opacity: 0 !important;
+      }
+    }
+  }
+}
+
+/* Paginator icons */
+.mat-mdc-paginator {
+  .mat-mdc-paginator-icon {
+    fill: var(--primary-green) !important;
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .mat-mdc-paginator-navigation-first,
+  .mat-mdc-paginator-navigation-previous,
+  .mat-mdc-paginator-navigation-next,
+  .mat-mdc-paginator-navigation-last {
+    .mat-mdc-button-touch-target {
+      width: 48px !important;
+      height: 48px !important;
+    }
+  }
+
+  .mat-mdc-paginator-container {
+    min-height: 56px;
+  }
+}
+
+/* Ensure icons are visible in all states */
+.mat-icon {
+  font-family: "Material Icons";
+  font-feature-settings: "liga";
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+
+  &.mat-primary {
+    color: var(--primary-green);
+  }
+}
+
+/* Table header sorting indicators */
+.mat-mdc-table .mat-mdc-header-cell {
+  &.mat-sort-header-sorted {
+    color: var(--primary-dark-green);
+
+    .mat-sort-header-arrow {
+      opacity: 1 !important;
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    background: var(--light-green-100);
+  }
+
+  .mat-card {
+    margin: 8px !important;
+    border-radius: 8px !important;
+  }
+}
