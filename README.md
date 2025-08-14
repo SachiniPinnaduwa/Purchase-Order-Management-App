@@ -37,6 +37,10 @@ A Clean Architecture implementation of a Purchase Order management system with A
 ### Edit Order
 ![EditOrder](Screenshots/EditPurchaseOrder.png)
 
+### Delete Order
+![DeleteOrder](Screenshots/DeletePurchaseOrder.png)
+
+
 ---
 
 ## 🛠️ Tech Stack 
