@@ -16,6 +16,8 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
+    justify-content: center; /* Center content inside */
+    text-align: center;
   }
 
   .app-title {
@@ -25,13 +27,25 @@
   }
 }
 
-.app-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+// .app-header {
+//   position: sticky;
+//   top: 0;
+//   z-index: 1000;
 
-  span {
+//   span {
+//     font-size: 1.25rem;
+//     font-weight: 500;
+//   }
+// }
+
+/* Responsive: smaller text on mobile */
+@media (max-width: 600px) {
+  .app-header {
+    height: auto;
+    padding: 12px;
+  }
+
+  .app-title {
     font-size: 1.25rem;
-    font-weight: 500;
   }
 }

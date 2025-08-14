@@ -256,3 +256,41 @@ button[color="warn"] mat-icon {
     overflow-x: auto;
   }
 }
+
+/* ===== Responsive Paginator ===== */
+@media (max-width: 768px) {
+  .mat-mdc-paginator {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px; /* space between items */
+    padding: 8px 12px !important;
+    text-align: center;
+  }
+
+  /* Ensure the range label goes full width */
+  .mat-mdc-paginator-range-label {
+    flex: 1 1 100%;
+    text-align: center !important;
+    margin: 4px 0;
+  }
+
+  /* Stack the page size selector and nav buttons */
+  .mat-mdc-paginator-page-size,
+  .mat-mdc-paginator-navigation {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  /* Make the input fit smaller widths */
+  .mat-mdc-text-field-wrapper {
+    max-width: 60px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .mat-mdc-paginator {
+    flex-direction: column;
+    align-items: center;
+  }
+}

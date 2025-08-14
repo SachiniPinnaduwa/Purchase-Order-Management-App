@@ -173,36 +173,61 @@ body {
   }
 }
 
-/* Sort header arrows */
-.mat-sort-header-container {
-  &.mat-sort-header-sorted {
-    .mat-sort-header-arrow {
-      color: var(--primary-green) !important; /* Green arrows to match theme */
-      opacity: 1 !important;
-
-      .mat-sort-header-indicator {
-        &:after {
-          color: inherit;
-        }
-      }
-    }
-  }
-
-  /* Hide arrow for non-sortable columns */
-  &:not(.mat-sort-header-sorted) {
-    cursor: default;
-
-    .mat-sort-header-arrow {
-      opacity: 0 !important;
-    }
-
-    &:hover {
-      .mat-sort-header-arrow {
-        opacity: 0 !important;
-      }
-    }
-  }
+/* === Always show sort arrows for sortable columns === */
+.mat-sort-header-container .mat-sort-header-arrow {
+  opacity: 1 !important; /* Always visible */
+  color: var(--primary-green) !important; /* Match your green theme */
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
+
+/* Lighter look before sorting is applied */
+.mat-sort-header:not(.mat-sort-header-sorted) .mat-sort-header-arrow {
+  color: var(--light-green-300) !important;
+  opacity: 0.6 !important;
+}
+
+/* On hover, make the arrow more prominent */
+.mat-sort-header:not(.mat-sort-header-sorted):hover .mat-sort-header-arrow {
+  color: var(--primary-green) !important;
+  opacity: 1 !important;
+}
+
+/* Optional: Remove the rule that hides arrows for non-sorted columns */
+.mat-sort-header-container:not(.mat-sort-header-sorted) .mat-sort-header-arrow {
+  /* Remove forced opacity 0 from old CSS */
+  opacity: 1 !important;
+}
+
+/* Sort header arrows */
+// .mat-sort-header-container {
+//   &.mat-sort-header-sorted {
+//     .mat-sort-header-arrow {
+//       color: var(--primary-green) !important; /* Green arrows to match theme */
+//       opacity: 1 !important;
+
+//       .mat-sort-header-indicator {
+//         &:after {
+//           color: inherit;
+//         }
+//       }
+//     }
+//   }
+
+//   /* Hide arrow for non-sortable columns */
+//   &:not(.mat-sort-header-sorted) {
+//     cursor: default;
+
+//     .mat-sort-header-arrow {
+//       opacity: 0 !important;
+//     }
+
+//     &:hover {
+//       .mat-sort-header-arrow {
+//         opacity: 0 !important;
+//       }
+//     }
+//   }
+// }
 
 /* Paginator icons */
 .mat-mdc-paginator {
@@ -240,15 +265,15 @@ body {
 }
 
 /* Table header sorting indicators */
-.mat-mdc-table .mat-mdc-header-cell {
-  &.mat-sort-header-sorted {
-    color: var(--primary-dark-green);
+// .mat-mdc-table .mat-mdc-header-cell {
+//   &.mat-sort-header-sorted {
+//     color: var(--primary-dark-green);
 
-    .mat-sort-header-arrow {
-      opacity: 1 !important;
-    }
-  }
-}
+//     .mat-sort-header-arrow {
+//       opacity: 1 !important;
+//     }
+//   }
+// }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
