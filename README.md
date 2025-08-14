@@ -40,6 +40,10 @@ A Clean Architecture implementation of a Purchase Order management system with A
 ### Delete Order
 ![DeleteOrder](Screenshots/DeletePurchaseOrder.png)
 
+### Filter Orders
+![DeleteOrder](Screenshots/FilterOrders.png)
+
+
 
 ---
 
